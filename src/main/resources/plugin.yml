@@ -1,0 +1,8 @@
+name: Env4U
+version: '${version}'
+main: ink.neokoni.env4u.Env4U
+api-version: '1.13'
+prefix: Env4U
+authors: [Neokoni]
+description: Set your own weather and time as your like on visual
+website: https://github.com/Neokoni/Env4U
