@@ -4,7 +4,7 @@ main: ink.neokoni.scene4u.Scene4U
 api-version: '1.13'
 prefix: Scene4U
 authors: [Neokoni]
-description: Set your own weather and time as your like on visual
+description: Set your own visually weather and time as you like
 website: https://github.com/Neokoni/Scene4U
 
 folia-supported: true
