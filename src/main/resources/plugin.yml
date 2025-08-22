@@ -1,27 +1,27 @@
-name: Env4U
+name: Scene4U
 version: '${version}'
-main: ink.neokoni.env4u.Env4U
+main: ink.neokoni.scene4u.Scene4U
 api-version: '1.13'
-prefix: Env4U
+prefix: Scene4U
 authors: [Neokoni]
 description: Set your own weather and time as your like on visual
-website: https://github.com/Neokoni/Env4U
+website: https://github.com/Neokoni/Scene4U
 
 folia-supported: true
 
 permissions:
-  env4u.use:
+  scene4u.use:
     default: true
     description: "player use basic permissions"
     children:
-      env4u.set: true
-      env4u.help: true
-      env4u.clear: true
-  env4u.reload:
+      scene4u.set: true
+      scene4u.help: true
+      scene4u.clear: true
+  scene4u.reload:
     default: op
 
 commands:
-  env4u:
-    description: "env4u basic command"
-    usage: "/env4u <help|clear|reload|set>"
-    aliases: ["env"]
+  scene4u:
+    description: "scene4u basic command"
+    usage: "/scene4u <help|clear|reload|set>"
+    aliases: ["scene"]

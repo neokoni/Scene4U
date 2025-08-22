@@ -1,9 +1,9 @@
-package ink.neokoni.env4u;
+package ink.neokoni.scene4u;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Env4U extends JavaPlugin {
-    private static Env4U instance;
+public final class Scene4U extends JavaPlugin {
+    private static Scene4U instance;
 
     @Override
     public void onEnable() {
@@ -21,7 +21,7 @@ public final class Env4U extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    public static Env4U getInstance() {
+    public static Scene4U getInstance() {
         return instance;
     }
 }

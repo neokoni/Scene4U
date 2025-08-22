@@ -1,4 +1,4 @@
-package ink.neokoni.env4u;
+package ink.neokoni.scene4u;
 
 import org.bukkit.WeatherType;
 import org.bukkit.entity.Player;
@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class EventListener implements Listener {
-    public EventListener(Env4U instance) {
+    public EventListener(Scene4U instance) {
         instance.getServer().getPluginManager().registerEvents(this, instance);
     }
 

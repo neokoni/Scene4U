@@ -1,10 +1,9 @@
-package ink.neokoni.env4u;
+package ink.neokoni.scene4u;
 
 import org.bukkit.WeatherType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -12,9 +11,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Commands implements CommandExecutor {
-    public Commands(Env4U instance) {
-        instance.getCommand("env4u").setExecutor(this);
-        instance.getCommand("env4u").setTabCompleter((sender, command, string, args) -> {
+    public Commands(Scene4U instance) {
+        instance.getCommand("scene4u").setExecutor(this);
+        instance.getCommand("scene4u").setTabCompleter((sender, command, string, args) -> {
             List<String> subCommands = new ArrayList<>();
             List<String> values = new ArrayList<>();
             subCommands.add("clear");
@@ -29,7 +28,7 @@ public class Commands implements CommandExecutor {
             values.add("noon");
 
             if (args.length <= 1) {
-                if (sender.hasPermission("env4u.reload")) {
+                if (sender.hasPermission("scene4u.reload")) {
                     subCommands.add("reload");
                     return subCommands;
                 }
@@ -47,7 +46,7 @@ public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (strings.length == 0) {
-            if (!commandSender.hasPermission("env4u.help")) {
+            if (!commandSender.hasPermission("scene4u.help")) {
                 noPermission(commandSender);
                 return true;
             }
@@ -56,7 +55,7 @@ public class Commands implements CommandExecutor {
         }
 
         if (strings[0].equals("help")) {
-            if (!commandSender.hasPermission("env4u.help")) {
+            if (!commandSender.hasPermission("scene4u.help")) {
                 noPermission(commandSender);
                 return true;
             }
@@ -65,7 +64,7 @@ public class Commands implements CommandExecutor {
         }
 
         if (strings[0].equals("reload")) {
-            if (!commandSender.hasPermission("env4u.reload")) {
+            if (!commandSender.hasPermission("scene4u.reload")) {
                 noPermission(commandSender);
                 return true;
             }
@@ -82,7 +81,7 @@ public class Commands implements CommandExecutor {
         Player player = (Player) commandSender;
 
         if (strings[0].equals("clear")) {
-            if (!player.hasPermission("env4u.clear")) {
+            if (!player.hasPermission("scene4u.clear")) {
                 noPermission(player);
                 return true;
             }
@@ -97,7 +96,7 @@ public class Commands implements CommandExecutor {
         }
 
         if (strings[0].equals("set")) {
-            if (!player.hasPermission("env4u.set")) {
+            if (!player.hasPermission("scene4u.set")) {
                 noPermission(player);
                 return true;
             }
@@ -131,7 +130,7 @@ public class Commands implements CommandExecutor {
             }
         }
 
-        if (!commandSender.hasPermission("env4u.help")) {
+        if (!commandSender.hasPermission("scene4u.help")) {
             noPermission(commandSender);
             return true;
         }
@@ -155,14 +154,14 @@ public class Commands implements CommandExecutor {
     }
 
     private void help(CommandSender sender) {
-        sender.sendMessage("/env4u clear " +
+        sender.sendMessage("/scene4u clear " +
                 new Configuration().getYaml("message.yml").getString("help_clear"));
-        sender.sendMessage("/env4u set <clear|downfall|day|midnight|night|noon|gametick> " +
+        sender.sendMessage("/scene4u set <clear|downfall|day|midnight|night|noon|gametick> " +
                 new Configuration().getYaml("message.yml").getString("help_set"));
-        sender.sendMessage("/env4u help " +
+        sender.sendMessage("/scene4u help " +
                 new Configuration().getYaml("message.yml").getString("help_main"));
-        if (sender.hasPermission("env4u.reload")) {
-            sender.sendMessage("/env4u reload " +
+        if (sender.hasPermission("scene4u.reload")) {
+            sender.sendMessage("/scene4u reload " +
                     new Configuration().getYaml("message.yml").getString("help_reload"));
         }
     }

@@ -1,6 +1,5 @@
-package ink.neokoni.env4u;
+package ink.neokoni.scene4u;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
@@ -12,20 +11,20 @@ public class Configuration {
     private static YamlConfiguration PLAYER_DATA;
 
     private boolean isExist(String FileName) {
-        return new File(Env4U.getInstance().getDataFolder(), FileName).exists();
+        return new File(Scene4U.getInstance().getDataFolder(), FileName).exists();
     }
 
     private YamlConfiguration getFile(String FileName) {
         if (!isExist(FileName)) {
-            Env4U.getInstance().saveResource(FileName, true);
+            Scene4U.getInstance().saveResource(FileName, true);
         }
 
-        File file = new File(Env4U.getInstance().getDataFolder(), FileName);
+        File file = new File(Scene4U.getInstance().getDataFolder(), FileName);
         YamlConfiguration yml = YamlConfiguration.loadConfiguration(file);
 
         if (yml.getKeys(false).isEmpty()) {
-            Env4U.getInstance().saveResource(FileName, true);
-            file = new File(Env4U.getInstance().getDataFolder(), FileName);
+            Scene4U.getInstance().saveResource(FileName, true);
+            file = new File(Scene4U.getInstance().getDataFolder(), FileName);
             yml = YamlConfiguration.loadConfiguration(file);
         }
         return yml;
@@ -57,7 +56,7 @@ public class Configuration {
         PLAYER_DATA.set(key, value);
 
         try {
-            PLAYER_DATA.save(new File(Env4U.getInstance().getDataFolder(), "data.yml"));
+            PLAYER_DATA.save(new File(Scene4U.getInstance().getDataFolder(), "data.yml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
