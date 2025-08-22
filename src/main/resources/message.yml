@@ -1,0 +1,8 @@
+done: "已完成操作"
+error_value: "错误的值"
+only_player: "仅玩家可使用"
+no_permission: "你没有此操作的权限"
+help_main: "展示帮助命令"
+help_clear: "清除天气和时间修改"
+help_set: "设置环境, 输入为游戏刻为设置时间"
+help_reload: "重载配置文件"

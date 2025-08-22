@@ -6,3 +6,22 @@ prefix: Env4U
 authors: [Neokoni]
 description: Set your own weather and time as your like on visual
 website: https://github.com/Neokoni/Env4U
+
+folia-supported: true
+
+permissions:
+  env4u.use:
+    default: true
+    description: "player use basic permissions"
+    children:
+      env4u.set: true
+      env4u.help: true
+      env4u.clear: true
+  env4u.reload:
+    default: op
+
+commands:
+  env4u:
+    description: "env4u basic command"
+    usage: "/env4u <help|clear|reload|set>"
+    aliases: ["env"]
