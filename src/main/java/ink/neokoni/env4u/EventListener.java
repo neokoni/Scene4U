@@ -13,7 +13,7 @@ public class EventListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        new Configuration().loadAll();
+        new Configuration().loadData();
 
         Player player = event.getPlayer();
         String weather = getData(player, "weather");

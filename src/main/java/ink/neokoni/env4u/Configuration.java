@@ -36,6 +36,14 @@ public class Configuration {
         PLAYER_DATA = getFile("data.yml");
     }
 
+    public void loadData() {
+        PLAYER_DATA = getFile("data.yml");
+    }
+
+    public void loadMessage() {
+        MESSAGES = getFile("message.yml");
+    }
+
     public YamlConfiguration getYaml(String FileName) {
         switch (FileName) {
             case "message.yml": return MESSAGES;
